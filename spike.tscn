@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://cbnj7gr1hg6vo"]
+
+[ext_resource type="Script" uid="uid://bb78qhl7p7xdn" path="res://scripts/spike.gd" id="1_7k7bx"]
+[ext_resource type="Texture2D" uid="uid://ciooj2wjftap1" path="res://assets/spike.png" id="2_tggh8"]
+[ext_resource type="AudioStream" uid="uid://cji71albjhc4w" path="res://assets/sound/sfx-death.mp3" id="3_tggh8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5sso0"]
+radius = 21.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_13jd2"]
+radius = 18.1108
+
+[node name="spike" type="Node2D"]
+script = ExtResource("1_7k7bx")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("2_tggh8")
+
+[node name="Area2D" type="Area2D" parent="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Area2D"]
+position = Vector2(1, 14)
+shape = SubResource("CircleShape2D_5sso0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1, 14)
+shape = SubResource("CircleShape2D_13jd2")
+
+[node name="sfx_death" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_tggh8")
+volume_db = -8.0
+
+[connection signal="body_entered" from="StaticBody2D/Area2D" to="." method="_on_area_2d_body_entered"]

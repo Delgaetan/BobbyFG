@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxeuecmnejx2c"]
+
+[ext_resource type="Script" uid="uid://dtdc8m76cgs2f" path="res://scripts/speedrun.gd" id="1_57eqq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_57eqq"]
+font_size = 56
+
+[node name="Speedrun" type="CanvasLayer"]
+script = ExtResource("1_57eqq")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 60.0
+offset_bottom = 24.0
+text = "100.000"
+label_settings = SubResource("LabelSettings_57eqq")
