@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://xei3ol3o2ca5"]
+
+[ext_resource type="Script" uid="uid://bedlccj7rbg2i" path="res://scripts/boutton_cube_qui_spawn.gd" id="1_ovs5l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2m0h4"]
+size = Vector2(70, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_205uk"]
+size = Vector2(78, 16)
+
+[node name="boutton_cube_qui_spawn" type="Node2D"]
+script = ExtResource("1_ovs5l")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 3.0
+offset_top = 126.0
+offset_right = 67.0
+offset_bottom = 137.0
+color = Color(0.5306935, 0.52779436, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_top = 131.0
+offset_right = 70.0
+offset_bottom = 141.0
+color = Color(0.73555195, 0.7352157, 0, 1)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(35, 136)
+shape = SubResource("RectangleShape2D_2m0h4")
+
+[node name="area_pour_piece" type="Area2D" parent="."]
+
+[node name="collision_piece" type="CollisionShape2D" parent="area_pour_piece"]
+position = Vector2(35, 134)
+shape = SubResource("RectangleShape2D_205uk")
+
+[connection signal="body_entered" from="area_pour_piece" to="." method="_on_area_pour_piece_body_entered"]
+[connection signal="body_entered" from="area_pour_piece" to="." method="_on_area_2d_body_entered"]

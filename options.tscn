@@ -1,0 +1,160 @@
+[gd_scene load_steps=10 format=3 uid="uid://bnwkwx3i4pa6w"]
+
+[ext_resource type="Texture2D" uid="uid://cgh6xsg2vcvhk" path="res://assets/titre bobby.png" id="1_07a1d"]
+[ext_resource type="Script" uid="uid://dxaxe0wjta3wc" path="res://scripts/options.gd" id="1_p8250"]
+[ext_resource type="Texture2D" uid="uid://lhribr5tkdn1" path="res://assets/play_boutton1.png" id="2_p8250"]
+[ext_resource type="Texture2D" uid="uid://dx6rwnyfkg7b4" path="res://assets/play_button4.png" id="3_kls10"]
+[ext_resource type="Texture2D" uid="uid://cseynxof5m1i5" path="res://assets/play_boutton3.png" id="4_p8250"]
+[ext_resource type="AudioStream" uid="uid://rvi5xbwyh0we" path="res://assets/sound/minimal-109310.mp3" id="6_kls10"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w5qgn"]
+bg_color = Color(0.752941, 0.796078, 0.862745, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 10
+shadow_offset = Vector2(10, 10)
+
+[sub_resource type="Theme" id="Theme_vmi34"]
+Panel/styles/panel = SubResource("StyleBoxFlat_w5qgn")
+
+[sub_resource type="LabelSettings" id="LabelSettings_07a1d"]
+font_size = 760
+font_color = Color(0, 0, 0, 1)
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0980392, 0.690196, 1, 1)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 296.0
+offset_bottom = 159.0
+size_flags_horizontal = 4
+theme = SubResource("Theme_vmi34")
+script = ExtResource("1_p8250")
+
+[node name="Panel" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.517
+anchor_top = 0.472
+anchor_right = 0.517
+anchor_bottom = 0.472
+offset_left = 388.968
+offset_top = 150.952
+offset_right = 1239.97
+offset_bottom = 608.952
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitreBobby" type="Sprite2D" parent="Control/Panel"]
+position = Vector2(433, 54)
+scale = Vector2(0.231964, 0.208676)
+texture = ExtResource("1_07a1d")
+
+[node name="speedrun" type="TextureButton" parent="Control/Panel"]
+layout_mode = 0
+offset_left = 309.0
+offset_top = 118.0
+offset_right = 536.0
+offset_bottom = 207.0
+texture_normal = ExtResource("2_p8250")
+texture_pressed = ExtResource("3_kls10")
+texture_hover = ExtResource("4_p8250")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Control/Panel/speedrun"]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 9.0
+offset_right = 2230.0
+offset_bottom = 1045.0
+scale = Vector2(0.05, 0.05)
+text = "any"
+label_settings = SubResource("LabelSettings_07a1d")
+
+[node name="Label2" type="Label" parent="Control/Panel/speedrun"]
+layout_mode = 0
+offset_left = -138.0
+offset_top = 10.0
+offset_right = 2271.0
+offset_bottom = 1046.0
+scale = Vector2(0.05, 0.05)
+text = "timer :"
+label_settings = SubResource("LabelSettings_07a1d")
+
+[node name="musique" type="TextureButton" parent="Control/Panel"]
+layout_mode = 0
+offset_left = 309.0
+offset_top = 203.0
+offset_right = 536.0
+offset_bottom = 292.0
+texture_normal = ExtResource("2_p8250")
+texture_pressed = ExtResource("3_kls10")
+texture_hover = ExtResource("4_p8250")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Control/Panel/musique"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 12.0
+offset_right = 1033.0
+offset_bottom = 1048.0
+scale = Vector2(0.05, 0.05)
+text = "on"
+label_settings = SubResource("LabelSettings_07a1d")
+
+[node name="Label2" type="Label" parent="Control/Panel/musique"]
+layout_mode = 0
+offset_left = -197.0
+offset_top = 12.0
+offset_right = 3394.0
+offset_bottom = 1048.0
+scale = Vector2(0.05, 0.05)
+text = "musique :"
+label_settings = SubResource("LabelSettings_07a1d")
+
+[node name="quit" type="TextureButton" parent="Control/Panel"]
+layout_mode = 0
+offset_left = 309.0
+offset_top = 291.0
+offset_right = 536.0
+offset_bottom = 380.0
+texture_normal = ExtResource("2_p8250")
+texture_pressed = ExtResource("3_kls10")
+texture_hover = ExtResource("4_p8250")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Control/Panel/quit"]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 12.0
+offset_right = 2188.0
+offset_bottom = 1048.0
+scale = Vector2(0.05, 0.05)
+text = "menu"
+label_settings = SubResource("LabelSettings_07a1d")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_kls10")
+autoplay = true
+
+[connection signal="pressed" from="Control/Panel/speedrun" to="Control" method="_on_speedrun_pressed"]
+[connection signal="pressed" from="Control/Panel/musique" to="Control" method="_on_musique_pressed"]
+[connection signal="pressed" from="Control/Panel/musique" to="Control" method="_on_all_levels_pressed"]
+[connection signal="pressed" from="Control/Panel/quit" to="Control" method="_on_texture_button_3_pressed"]
+[connection signal="pressed" from="Control/Panel/quit" to="Control" method="_on_quit_pressed"]

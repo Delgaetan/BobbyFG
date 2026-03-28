@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://rlckwmh23rqv"]
+
+[ext_resource type="Script" uid="uid://de3uxr018iwmn" path="res://scripts/mechant_rouge.gd" id="1_ie0s5"]
+[ext_resource type="Texture2D" uid="uid://bhjt283of5s8r" path="res://assets/mechant_rouge.png" id="2_attal"]
+[ext_resource type="AudioStream" uid="uid://cji71albjhc4w" path="res://assets/sound/sfx-death.mp3" id="3_pcu0m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_attal"]
+size = Vector2(74, 70)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_40kvb"]
+size = Vector2(70, 0.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pcu0m"]
+size = Vector2(70, 70)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_ie0s5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_attal")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+shape = SubResource("RectangleShape2D_attal")
+
+[node name="meurt" type="Area2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/meurt"]
+position = Vector2(0, -35.25)
+shape = SubResource("RectangleShape2D_40kvb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_pcu0m")
+
+[node name="sfx_death" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_pcu0m")
+volume_db = -8.0
+
+[connection signal="body_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Sprite2D/meurt" to="." method="_on_meurt_body_entered"]
