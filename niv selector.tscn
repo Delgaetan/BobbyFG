@@ -1,0 +1,188 @@
+[gd_scene load_steps=5 format=3 uid="uid://dgg2025jof1p1"]
+
+[ext_resource type="Script" uid="uid://bby5gu4myu8ri" path="res://scripts/niv_selector.gd" id="1_841nj"]
+[ext_resource type="Texture2D" uid="uid://ckb76cs8yfdqy" path="res://assets/niv bobby button.png" id="1_t4kp8"]
+[ext_resource type="Texture2D" uid="uid://cgh6xsg2vcvhk" path="res://assets/titre bobby.png" id="2_4y4j6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4y4j6"]
+font_size = 477
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_841nj")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1.2514e-06, 0.392297, 0.584225, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.556
+anchor_right = 0.5
+anchor_bottom = 0.556
+offset_left = -218.0
+offset_top = -18.288
+offset_right = 218.0
+offset_bottom = 83.712
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="niv_5" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_t4kp8")
+
+[node name="Label" type="Label" parent="HBoxContainer/niv_5"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 34.0
+offset_right = 318.0
+offset_bottom = 684.0
+scale = Vector2(0.05, 0.05)
+text = "5"
+label_settings = SubResource("LabelSettings_4y4j6")
+
+[node name="niv_6" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_t4kp8")
+
+[node name="Label" type="Label" parent="HBoxContainer/niv_6"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 34.0
+offset_right = 318.0
+offset_bottom = 684.0
+scale = Vector2(0.05, 0.05)
+text = "6"
+label_settings = SubResource("LabelSettings_4y4j6")
+
+[node name="niv_7" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_t4kp8")
+
+[node name="Label" type="Label" parent="HBoxContainer/niv_7"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 34.0
+offset_right = 318.0
+offset_bottom = 684.0
+scale = Vector2(0.05, 0.05)
+text = "7"
+label_settings = SubResource("LabelSettings_4y4j6")
+
+[node name="niv_8" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_t4kp8")
+
+[node name="Label" type="Label" parent="HBoxContainer/niv_8"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 34.0
+offset_right = 318.0
+offset_bottom = 684.0
+scale = Vector2(0.05, 0.05)
+text = "8"
+label_settings = SubResource("LabelSettings_4y4j6")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.519
+anchor_right = 0.5
+anchor_bottom = 0.519
+offset_left = -218.0
+offset_top = -92.312
+offset_right = 218.0
+offset_bottom = 11.688
+grow_horizontal = 2
+
+[node name="niv_1" type="TextureButton" parent="HBoxContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("1_t4kp8")
+
+[node name="Label" type="Label" parent="HBoxContainer2/niv_1"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 34.0
+offset_right = 318.0
+offset_bottom = 684.0
+scale = Vector2(0.05, 0.05)
+text = "1"
+label_settings = SubResource("LabelSettings_4y4j6")
+
+[node name="niv_2" type="TextureButton" parent="HBoxContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("1_t4kp8")
+
+[node name="Label" type="Label" parent="HBoxContainer2/niv_2"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 34.0
+offset_right = 318.0
+offset_bottom = 684.0
+scale = Vector2(0.05, 0.05)
+text = "2"
+label_settings = SubResource("LabelSettings_4y4j6")
+
+[node name="niv_3" type="TextureButton" parent="HBoxContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("1_t4kp8")
+
+[node name="Label" type="Label" parent="HBoxContainer2/niv_3"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 34.0
+offset_right = 318.0
+offset_bottom = 684.0
+scale = Vector2(0.05, 0.05)
+text = "3"
+label_settings = SubResource("LabelSettings_4y4j6")
+
+[node name="niv_4" type="TextureButton" parent="HBoxContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("1_t4kp8")
+
+[node name="Label" type="Label" parent="HBoxContainer2/niv_4"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 34.0
+offset_right = 318.0
+offset_bottom = 684.0
+scale = Vector2(0.05, 0.05)
+text = "4"
+label_settings = SubResource("LabelSettings_4y4j6")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="TitreBobby" type="Sprite2D" parent="HBoxContainer3"]
+position = Vector2(19, 104)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_4y4j6")
+
+[connection signal="pressed" from="HBoxContainer/niv_5" to="." method="_on_niv_5_pressed"]
+[connection signal="pressed" from="HBoxContainer/niv_6" to="." method="_on_niv_6_pressed"]
+[connection signal="pressed" from="HBoxContainer/niv_7" to="." method="_on_niv_7_pressed"]
+[connection signal="pressed" from="HBoxContainer2/niv_1" to="." method="_on_niv_1_pressed"]
+[connection signal="pressed" from="HBoxContainer2/niv_2" to="." method="_on_niv_2_pressed"]
+[connection signal="pressed" from="HBoxContainer2/niv_3" to="." method="_on_niv_3_pressed"]
+[connection signal="pressed" from="HBoxContainer2/niv_4" to="." method="_on_niv_4_pressed"]

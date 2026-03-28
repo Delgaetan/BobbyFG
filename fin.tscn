@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://dysj356tay2"]
+
+[ext_resource type="Texture2D" uid="uid://c63pdj8078uw3" path="res://assets/particule fin.png" id="1_7gwgi"]
+[ext_resource type="Script" uid="uid://c0mhmn16ohw4" path="res://scripts/fin.gd" id="1_igkyy"]
+[ext_resource type="Texture2D" uid="uid://bptvq27o7ek5t" path="res://assets/fin.png" id="2_kp3xx"]
+[ext_resource type="AudioStream" uid="uid://df0wgig5kh3y2" path="res://assets/sound/sfx-win.mp3" id="4_3jrsg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kp3xx"]
+radius = 25.02
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_igkyy"]
+radius = 46.0435
+
+[node name="fin" type="Node2D"]
+script = ExtResource("1_igkyy")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="CharacterBody2D"]
+position = Vector2(0, -4)
+amount = 200
+texture = ExtResource("1_7gwgi")
+lifetime = 0.2
+fixed_fps = 120
+local_coords = true
+emission_shape = 1
+emission_sphere_radius = 84.15
+gravity = Vector2(0, 100)
+angle_min = 529.8
+angle_max = 692.8
+scale_amount_min = 0.0
+scale_amount_max = 2.05
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("2_kp3xx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CircleShape2D_kp3xx")
+
+[node name="Area2D" type="Area2D" parent="CharacterBody2D"]
+position = Vector2(33, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
+position = Vector2(-33, 0)
+shape = SubResource("CircleShape2D_igkyy")
+
+[node name="win" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_3jrsg")
+volume_db = -16.0
+
+[connection signal="body_entered" from="CharacterBody2D/Area2D" to="." method="_on_area_2d_body_entered"]
